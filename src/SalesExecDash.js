@@ -7,29 +7,8 @@ class SalesExecDash extends React.Component {
   constructor(props) {
     super(props);
     let orders =
-      localStorage.getItem("pharma-orders") === null ||
-      localStorage.getItem("pharma-orders") === "[]"
-        ? [
-            {
-              currentIndex: null,
-              OrderId: "1234",
-              customerName: "Naveen",
-              customerCntctNmbr: "9999999999",
-              products: [
-                {
-                  productName: "Astra Zeneca",
-                  unitPrice: 1000,
-                  quantity: 2,
-                },
-                {
-                  productName: "Covax",
-                  unitPrice: 1200,
-                  quantity: 3,
-                },
-              ],
-              totalAmount: 5600,
-            },
-          ]
+      localStorage.getItem("pharma-orders") === null
+        ? []
         : JSON.parse(localStorage.getItem("pharma-orders"));
     this.state = {
       orders: [...orders],
